@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Chutyy ❤️🌼</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root{
+    --bg-start:#fefcff; --bg-end:#e9f3ff; --panel:#ffffff; --ink:#1d2a39; --muted:#4b5c72;
+    --brand:#6c5ce7; --brand-2:#00d1b2; --accent:#ff7ab6; --accent-2:#ffd166;
+    --cake:#f2a07b; --cake-2:#e07a5f; --frost:#ffe082; --drip:#ffd166; --plate:#e6ebf5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg-start:#0b1020; --bg-end:#0f1a33; --panel:#0f1426cc; --ink:#eaf1ff; --muted:#a7b1c6;
+      --brand:#8a7dff; --brand-2:#2dd4bf; --accent:#ff8cc6; --accent-2:#ffe08a; --plate:#1e2740;
+      --cake:#f09a75; --cake-2:#ce6c52; --frost:#ffe082; --drip:#ffd166;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial}
+  body{
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 800px at 20% -10%, #fffbf4 0%, transparent 60%),
+      radial-gradient(1400px 900px at 120% 10%, #f6f0ff 0%, transparent 60%),
+      linear-gradient(180deg,var(--bg-start),var(--bg-end));
+    display:flex;align-items:center;justify-content:center;padding:24px;overflow-x:hidden;
+  }
+
+  /* floating balloons */
+  .balloon{
+    position:fixed; width:28px; height:36px; border-radius:50% 50% 45% 45%;
+    opacity:.18; filter:blur(0.2px); animation:float 12s ease-in-out infinite;
+  }
+  .balloon::after{
+    content:""; position:absolute; left:50%; transform:translateX(-50%);
+    bottom:-8px; width:2px; height:12px; background:currentColor; opacity:.6;
+  }
+  .b1{left:6%; top:65%; background:#ff9bd3; color:#ff9bd3; animation-delay:-3s; }
+  .b2{left:88%; top:15%; background:#8bd3ff; color:#8bd3ff; animation-delay:-7s;}
+  .b3{left:12%; top:12%; background:#ffd166; color:#ffd166; animation-delay:-11s;}
+  .b4{left:80%; top:68%; background:#a3ffa4; color:#a3ffa4; animation-delay:-5s;}
+  @keyframes float { 0%{transform:translateY(0) translateX(0) rotate(0)} 50%{transform:translateY(-30px) translateX(10px) rotate(3deg)} 100%{transform:translateY(0) translateX(0) rotate(0)} }
+  @media (prefers-reduced-motion: reduce){ .balloon{animation:none} }
+
+  .wrap{
+    max-width:900px;width:min(96vw,880px);text-align:center;padding:26px 22px 28px;border-radius:16px;
+    background:var(--panel); backdrop-filter:saturate(120%) blur(6px);
+    box-shadow:0 10px 30px rgba(18,32,63,.12), 0 2px 0 rgba(255,255,255,.6) inset; position:relative;
+  }
+  h1{margin:0 0 6px;font-size:clamp(22px,3vw,34px);letter-spacing:.2px}
+  p.small{margin:6px 0 18px;color:var(--muted);font-size:14px}
+
+  /* cake scene */
+  .stage{ display:grid; place-items:center; padding:8px 0 0; position:relative; }
+  .plate{
+    width:min(92%,520px); height:22px; border-radius:40px;
+    background:radial-gradient(ellipse at center, var(--plate), #cfd6e8 70%, rgba(0,0,0,.12) 100%);
+    box-shadow:0 20px 35px rgba(20,28,56,.25); margin:6px auto 0;
+  }
+  .cake{ position:relative;margin:10px auto 8px;width:min(90%,520px);height:320px; display:grid; place-items:end center; }
+  .layer{ position:absolute; left:50%; transform:translateX(-50%); border-radius:20px; overflow:visible; }
+  .layer.bottom{
+    width:84%; height:150px; bottom:20px;
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.08), transparent 45%),
+      radial-gradient(12px 8px at 20% 40%, rgba(255,255,255,.35), transparent 60%),
+      radial-gradient(10px 8px at 60% 65%, rgba(255,255,255,.2), transparent 60%),
+      linear-gradient(180deg, var(--cake) 0%, var(--cake-2) 100%);
+    box-shadow:0 6px 0 rgba(0,0,0,.06) inset, 0 8px 20px rgba(0,0,0,.12);
+  }
+  .layer.fill{ width:78%; height:26px; bottom:162px; background:repeating-linear-gradient(90deg,#fff 0 26px,#ffe 26px 52px); border-radius:12px; box-shadow:0 2px 0 rgba(0,0,0,.05) inset, 0 1px 0 #fff8; }
+  .layer.top{
+    width:70%; height:110px; bottom:182px;
+    background:linear-gradient(180deg,#fff8c9 0%, var(--frost) 75%, #f7cd6a 100%);
+    box-shadow:0 6px 0 rgba(0,0,0,.06) inset, 0 8px 18px rgba(0,0,0,.12); border-radius:18px 18px 16px 16px;
+  }
+  .drips{ position:absolute; left:50%; transform:translateX(-50%); bottom:182px; width:72%; height:64px; pointer-events:none; }
+  .drip{ position:absolute; width:26px; height:64px; background:#ffd166; border-radius:14px; filter:drop-shadow(0 2px 3px rgba(0,0,0,.15)); animation:dripWiggle 2.6s ease-in-out infinite; }
+  .drip:nth-child(1){ left:6%; height:48px; animation-delay:-.1s}
+  .drip:nth-child(2){ left:18%; height:56px; animation-delay:-.6s}
+  .drip:nth-child(3){ left:34%; height:44px; animation-delay:-.3s}
+  .drip:nth-child(4){ left:52%; height:62px; animation-delay:-.9s}
+  .drip:nth-child(5){ left:70%; height:46px; animation-delay:-.2s}
+  .drip:nth-child(6){ left:86%; height:54px; animation-delay:-.7s}
+  @keyframes dripWiggle{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(3px)} }
+  @media (prefers-reduced-motion: reduce){ .drip{animation:none} }
+
+  /* sprinkles */
+  .sprinkles{ position:absolute; left:50%; transform:translateX(-50%); bottom:186px; width:70%; height:110px; pointer-events:none; }
+  .sprinkle{ position:absolute; width:8px; height:16px; border-radius:5px; transform:rotate(var(--r,15deg)); background:var(--c,#ff6a89); filter:drop-shadow(0 1px 1px rgba(0,0,0,.2)); }
+  .s1{left:6%; top:16%; --c:#ff7ab6; --r:18deg}
+  .s2{left:18%; top:32%; --c:#7aa2ff; --r:6deg}
+  .s3{left:28%; top:12%; --c:#ffd166; --r:-22deg}
+  .s4{left:40%; top:40%; --c:#7df0c8; --r:30deg}
+  .s5{left:56%; top:22%; --c:#ffa27a; --r:-15deg}
+  .s6{left:70%; top:36%; --c:#b58cff; --r:18deg}
+  .s7{left:82%; top:18%; --c:#ff9a7a; --r:-10deg}
+
+  /* candles */
+  .candles{ position:absolute; left:50%; transform:translateX(-50%); bottom:270px; display:flex; gap:22px; }
+  .candle{ width:14px; height:56px; position:relative; border-radius:3px;
+    background:repeating-linear-gradient(135deg,#ffffff 0 10px,#ffffff 10px 12px,#e9efff 12px 22px,#e9efff 22px 24px);
+    box-shadow:inset 0 -3px 6px rgba(0,0,0,.05), 0 2px 0 rgba(0,0,0,.06);
+  }
+  .candle.alt{ background:repeating-linear-gradient(135deg,#ffffff 0 10px,#ffffff 10px 12px,#ffe9f5 12px 22px,#ffe9f5 22px 24px); }
+  .wick{ position:absolute; left:50%; transform:translateX(-50%); bottom:100%; width:2px; height:10px; background:#2b2b2b; border-radius:2px; }
+
+  /* flames */
+  .flame{
+    position:absolute; left:50%; transform:translateX(-50%) translateY(-6px); bottom:100%;
+    width:16px; height:22px; border-radius:50% 50% 45% 45%;
+    background:radial-gradient(circle at 50% 30%, #fff7 0 30%, transparent 30%),
+               radial-gradient(circle at 50% 40%, #fff8 0 46%, transparent 46%),
+               linear-gradient(180deg,#ffd166 0%, #ff8a00 75%);
+    filter: drop-shadow(0 0 10px #ffb703) drop-shadow(0 4px 8px rgba(255,120,0,.25));
+    animation:flicker 240ms infinite alternate; z-index:2;
+  }
+  .flame:after{
+    content:""; position:absolute; left:50%; transform:translateX(-50%) translateY(3px);
+    width:8px; height:12px; border-radius:50% 50% 45% 45%;
+    background:linear-gradient(180deg,#fff8, #ffd166); filter:blur(.2px);
+  }
+  @keyframes flicker{ from{transform:translateX(-50%) translateY(-8px) scale(1)} to{transform:translateX(-50%) translateY(-12px) scale(.92)} }
+  @media (prefers-reduced-motion: reduce){ .flame{animation:none} }
+
+  .smoke{
+    position:absolute; left:50%; transform:translateX(-50%); bottom:120%;
+    width:22px; height:22px; border-radius:50%;
+    background: radial-gradient(circle at 40% 30%, rgba(180,190,210,.65), rgba(180,190,210,0) 70%);
+    opacity:0; pointer-events:none;
+  }
+
+  /* extinguished state */
+  .out .flame{opacity:0; animation-play-state:paused}
+  .out .smoke{opacity:1; animation:rise 1500ms ease-out forwards}
+  @keyframes rise{ 0%{transform:translateX(-50%) translateY(0) scale(.7);opacity:.9} 100%{transform:translateX(-50%) translateY(-90px) scale(1.15);opacity:0} }
+
+  /* UI */
+  .controls{ display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap }
+  button, input[type=range]{ padding:10px 14px;border-radius:10px;border:1px solid #cdd8ef;background:#fff;color:var(--ink); cursor:pointer; transition:transform .08s ease, box-shadow .2s ease, border-color .2s ease; }
+  button:hover{ box-shadow:0 6px 18px rgba(18,32,63,.12) }
+  button:active{ transform:translateY(1px) }
+  button.primary{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white; border:none; }
+  button.ghost{ background:transparent; }
+  .status{margin-top:12px;color:#264653}
+  .row{display:flex;gap:10px;align-items:center;justify-content:center}
+  .label{font-size:13px;color:#2b3b4a}
+  .meter{ margin-top:8px; height:8px; width:240px; border-radius:999px; background:#e8eefb; overflow:hidden; margin-inline:auto; }
+  .meter > span{display:block; height:100%; width:0%; background:linear-gradient(90deg,#82caff,#67e8f9); transition:width .12s linear}
+  .hidden{display:none}
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* 🌼 Realistic Daisy Confetti
+     .flower  -> vertical fall
+     .sprite  -> horizontal sway
+     .bloom   -> slow spin + scale-in (bloom) */
+  .confetti{ position:fixed; left:0; top:0; width:100vw; height:100vh; pointer-events:none; overflow:hidden; z-index:5; }
+  .flower{
+    position:absolute; top:-40px; left:0;
+    width:var(--s,30px); height:var(--s,30px);
+    animation:fall var(--fall,1200ms) linear forwards;
+    will-change: transform; filter:drop-shadow(0 3px 4px rgba(0,0,0,.18));
+  }
+  .sprite{
+    position:absolute; inset:0;
+    animation:sway var(--sway,2200ms) ease-in-out infinite;
+    transform-origin:50% -20vh; will-change: transform;
+  }
+  .bloom{
+    position:absolute; inset:0; display:block;
+    animation:
+      bloomIn 280ms ease-out both,
+      spin var(--spin,4800ms) linear infinite;
+    will-change: transform;
+  }
+
+  /* petal drawing (teardrop with soft gradient + edge) */
+  .petal{
+    --len: 55%;         /* length relative to flower box */
+    --thick: 38%;       /* width relative to flower box */
+    position:absolute; left:50%; top:50%;
+    width:var(--thick); height:var(--len);
+    transform-origin:50% 90%;
+    transform:
+      translate(-50%,-50%)
+      rotate(var(--rot,0deg))
+      translateY(calc(-1 * var(--len) * 0.55))
+      scaleX(var(--sx,1)) scaleY(var(--sy,1.06));
+    border-radius:50% 50% 44% 44% / 58% 58% 42% 42%;
+    background:
+      radial-gradient(120% 90% at 50% 10%, #ffffff 0%, #f7f8ff 45%, #e9eef7 78%, #dfe6f2 100%);
+    box-shadow:
+      inset 0 -1px 2px #00000010,
+      inset 0 1px 1px #ffffffcc;
+    overflow:hidden;
+  }
+  .petal::after{ /* subtle center line highlight */
+    content:""; position:absolute; left:50%; top:12%;
+    width:18%; height:76%; transform:translateX(-50%);
+    background:linear-gradient(180deg,#ffffff80,transparent 60%);
+    filter:blur(0.6px); opacity:.75;
+  }
+
+  /* daisy center (multi-ring + highlight) */
+  .core{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:38%; height:38%; border-radius:50%;
+    background:
+      radial-gradient(circle at 50% 45%, #fff7b8 0 22%, transparent 23%),
+      radial-gradient(circle at 55% 55%, #ffe78a 0 45%, #ffd24d 46% 68%, #e6a90e 69% 100%);
+    box-shadow:
+      inset 0 0 0 2px #ffe799,
+      inset 0 3px 6px #00000012,
+      0 1px 2px #0002;
+  }
+
+  /* animations */
+  @keyframes fall { to{ transform:translateY(100vh) } }
+  @keyframes sway {
+    0%   { transform:translateX(0) rotate(0deg) }
+    50%  { transform:translateX(16px) rotate(8deg) }
+    100% { transform:translateX(0) rotate(0deg) }
+  }
+  @keyframes spin { to { transform:rotate(360deg) } }
+  @keyframes bloomIn {
+    0% { transform:scale(.85); opacity:.0 }
+    60%{ transform:scale(1.03); opacity:1 }
+    100%{ transform:scale(1) }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sprite{animation:none}
+    .bloom{animation:spin 6400ms linear infinite}
+    .flower{animation:fall 1200ms linear forwards}
+  }
+</style>
+</head>
+<body>
+  <div class="balloon b1"></div><div class="balloon b2"></div><div class="balloon b3"></div><div class="balloon b4"></div>
+
+  <div class="confetti" aria-hidden="true" id="confetti"></div>
+
+  <div class="wrap" role="application" aria-labelledby="title" aria-describedby="desc">
+    <h1 id="title">Happy Birthday Chutyy ❤️🌼</h1>
+    <p class="small" id="desc">
+      Happy Birthday, love 🎂💖! I hope today is filled with laughter, surprises, and the kind of joy that makes your heart glow.
+      You make my life brighter in ways I can’t put into words, and I’m so grateful to be the one by your side.
+      Here’s to celebrating you today and always.
+    </p>
+
+    <div class="stage">
+      <div class="cake" id="cake" aria-live="polite" aria-label="Birthday cake with candles">
+        <div class="layer bottom"></div>
+        <div class="layer fill"></div>
+        <div class="layer top"></div>
+
+        <div class="drips" aria-hidden="true">
+          <div class="drip"></div><div class="drip"></div><div class="drip"></div>
+          <div class="drip"></div><div class="drip"></div><div class="drip"></div>
+        </div>
+        <div class="sprinkles" aria-hidden="true">
+          <div class="sprinkle s1"></div><div class="sprinkle s2"></div><div class="sprinkle s3"></div>
+          <div class="sprinkle s4"></div><div class="sprinkle s5"></div><div class="sprinkle s6"></div><div class="sprinkle s7"></div>
+        </div>
+
+        <div class="candles" id="candles">
+          <div class="candle"><span class="wick"></span><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle alt"><span class="wick"></span><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle"><span class="wick"></span><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle alt"><span class="wick"></span><div class="flame"></div><div class="smoke"></div></div>
+          <div class="candle"><span class="wick"></span><div class="flame"></div><div class="smoke"></div></div>
+        </div>
+
+        <div class="plate" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="controls" aria-label="Controls">
+      <button id="startBtn" class="primary" aria-pressed="false">Start (Mic)</button>
+      <button id="calBtn" class="ghost" title="Measure room noise & auto set threshold">Calibrate</button>
+      <button id="relightBtn" class="hidden">Relight</button>
+      <div class="row" style="margin-left:6px">
+        <span class="label">Threshold</span>
+        <input id="thresholdRange" type="range" min="0.001" max="0.2" step="0.001" value="0.02" aria-label="Blow sensitivity threshold">
+      </div>
+    </div>
+
+    <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
+    <div class="status" id="status" role="status" aria-live="polite">Idle — microphone not started.</div>
+    <span class="sr-only" id="srStatus"></span>
+  </div>
+
+<script>
+/* --- Audio blow detection --- */
+let audioCtx = null, micStream = null, analyserLow = null, raf = null;
+let monitoring = false, extinguished = false;
+let threshold = 0.02;
+
+const status = document.getElementById('status');
+const srStatus = document.getElementById('srStatus');
+const cake = document.getElementById('cake');
+const startBtn = document.getElementById('startBtn');
+const calBtn = document.getElementById('calBtn');
+const relightBtn = document.getElementById('relightBtn');
+const thresholdRange = document.getElementById('thresholdRange');
+const meterFill = document.getElementById('meterFill');
+const confetti = document.getElementById('confetti');
+
+threshold = parseFloat(thresholdRange.value);
+function logStatus(s){ status.textContent = s; srStatus.textContent = s; }
+
+thresholdRange.addEventListener('input', e=>{
+  threshold = parseFloat(e.target.value);
+  logStatus('Threshold adjusted to ' + threshold.toFixed(3));
+});
+startBtn.addEventListener('click', initAudio);
+calBtn.addEventListener('click', calibrate);
+relightBtn.addEventListener('click', relight);
+
+function getRMS(a){ let s=0; for(let i=0;i<a.length;i++){ s+=a[i]*a[i]; } return Math.sqrt(s/a.length); }
+
+async function initAudio(){
+  if (monitoring) return;
+  if (!navigator.mediaDevices?.getUserMedia){ alert('Microphone access not supported by this browser.'); return; }
+  try{
+    micStream = await navigator.mediaDevices.getUserMedia({ audio:true });
+    audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    const source = audioCtx.createMediaStreamSource(micStream);
+
+    const lowpass = audioCtx.createBiquadFilter(); lowpass.type='lowpass'; lowpass.frequency.value = 800;
+    analyserLow = audioCtx.createAnalyser(); analyserLow.fftSize = 2048;
+
+    source.connect(lowpass); lowpass.connect(analyserLow);
+    monitoring = true; startBtn.setAttribute('aria-pressed','true'); startBtn.textContent='Listening…';
+    logStatus('Microphone started. Blow toward the mic!');
+    runMonitor();
+  }catch(err){ console.error(err); alert('Could not access microphone. Please allow microphone permission.'); logStatus('Microphone permission denied or unavailable.'); }
+}
+
+let lastBlow = 0;
+function runMonitor(){
+  const buffer = new Float32Array(analyserLow.fftSize);
+  const sampleIntervalMs = 60;
+  const tick = () => {
+    analyserLow.getFloatTimeDomainData(buffer);
+    const rms = getRMS(buffer);
+    const lvl = Math.max(0, Math.min(1, rms / 0.1));
+    meterFill.style.width = (lvl*100).toFixed(1)+'%';
+    if(!extinguished && rms > threshold && (Date.now()-lastBlow>700)){ lastBlow = Date.now(); extinguish(rms); }
+    raf = setTimeout(tick, sampleIntervalMs);
+  };
+  tick();
+}
+
+async function calibrate(){
+  if (!monitoring){ await initAudio(); if(!monitoring) return; }
+  logStatus('Calibrating: keep quiet for 2s…');
+  const buffer = new Float32Array(analyserLow.fftSize);
+  const samples = [];
+  await new Promise(res=>{
+    const it = setInterval(()=>{
+      analyserLow.getFloatTimeDomainData(buffer);
+      samples.push(getRMS(buffer));
+      if (samples.length>30){ clearInterval(it); res(); }
+    },60);
+  });
+  const mean = samples.reduce((a,b)=>a+b,0)/samples.length;
+  const newThreshold = Math.max(mean*6, mean+0.02, 0.01);
+  threshold = newThreshold;
+  thresholdRange.value = threshold;
+  logStatus('Calibrated! Threshold set to ' + threshold.toFixed(3) + '. Try blowing now.');
+}
+
+function extinguish(rms){
+  extinguished = true;
+  cake.classList.add('out');
+  relightBtn.classList.remove('hidden');
+  logStatus('Candles out! Happy Birthday 🎉 (Click Relight to try again)');
+  burstFlowers(rms);
+}
+
+function relight(){
+  extinguished = false;
+  cake.classList.remove('out');
+  relightBtn.classList.add('hidden');
+  logStatus('Relit! You can blow again.');
+}
+
+/* ---- 🌼 Realistic Daisy "confetti" ----
+   Structure: flower -> sprite -> bloom -> (petals + core)
+   - fall: vertical drop
+   - sway: horizontal drift + slight rock
+   - spin: slow continuous rotation
+   - bloomIn: quick scale-in pop */
+function createFlower(size){
+  const f = document.createElement('div');
+  f.className = 'flower';
+  f.style.setProperty('--s', size + 'px');
+  f.style.setProperty('--fall', (900 + Math.random()*1100) + 'ms');
+  f.style.left = (Math.random()*window.innerWidth) + 'px';
+
+  const sprite = document.createElement('div');
+  sprite.className = 'sprite';
+  sprite.style.setProperty('--sway', (1600 + Math.random()*2200) + 'ms');
+
+  const bloom = document.createElement('div');
+  bloom.className = 'bloom';
+  bloom.style.setProperty('--spin', (4200 + Math.random()*3600) + 'ms');
+  bloom.style.transform = `rotate(${(Math.random()*80-40).toFixed(1)}deg)`; // initial tilt
+
+  // petals: 10–18 with small shape jitter
+  const petals = 10 + Math.floor(Math.random()*9);
+  for(let i=0;i<petals;i++){
+    const p = document.createElement('span');
+    p.className = 'petal';
+    const angle = (360/petals) * i;
+    // random slight variations per petal
+    p.style.setProperty('--rot', angle.toFixed(2)+'deg');
+    p.style.setProperty('--sx', (0.95 + Math.random()*0.12).toFixed(2));
+    p.style.setProperty('--sy', (1.02 + Math.random()*0.16).toFixed(2));
+    bloom.appendChild(p);
+  }
+
+  // center disk
+  const c = document.createElement('span');
+  c.className = 'core';
+  bloom.appendChild(c);
+
+  sprite.appendChild(bloom);
+  f.appendChild(sprite);
+  return f;
+}
+
+function burstFlowers(power=0.05){
+  const count = Math.min(140, Math.max(50, Math.floor(power*1100)));
+  for(let i=0;i<count;i++){
+    const size = 20 + Math.random()*20; // 20–40px
+    const f = createFlower(size);
+    confetti.appendChild(f);
+    // cleanup after a bit beyond max animations
+    setTimeout(()=>f.remove(), 3200);
+  }
+}
+
+/* cleanup */
+window.addEventListener('beforeunload', ()=>{
+  if (raf) clearTimeout(raf);
+  if (micStream) micStream.getTracks().forEach(t=>t.stop());
+  if (audioCtx?.close) audioCtx.close();
+});
+</script>
+</body>
+</html>
