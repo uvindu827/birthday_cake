@@ -283,7 +283,7 @@
     </div>
 
     <div class="controls" aria-label="Controls">
-      <button id="startBtn" class="primary" aria-pressed="false">Start (Mic)</button>
+      <button id="startBtn" class="primary" aria-pressed="false">Lets celebrate😍</button>
       <button id="calBtn" class="ghost" title="Measure room noise & auto set threshold">Calibrate</button>
       <button id="relightBtn" class="hidden">Relight</button>
       <div class="row" style="margin-left:6px">
@@ -343,8 +343,8 @@ async function initAudio(){
     analyserLow = audioCtx.createAnalyser(); analyserLow.fftSize = 2048;
 
     source.connect(lowpass); lowpass.connect(analyserLow);
-    monitoring = true; startBtn.setAttribute('aria-pressed','true'); startBtn.textContent='Listening…';
-    logStatus('Microphone started. Blow toward the mic!');
+    monitoring = true; startBtn.setAttribute('aria-pressed','true'); startBtn.textContent='Blow candles....';
+    logStatus('Make a wish & Blow toward the mic!');
     runMonitor();
   }catch(err){ console.error(err); alert('Could not access microphone. Please allow microphone permission.'); logStatus('Microphone permission denied or unavailable.'); }
 }
@@ -380,14 +380,14 @@ async function calibrate(){
   const newThreshold = Math.max(mean*6, mean+0.02, 0.01);
   threshold = newThreshold;
   thresholdRange.value = threshold;
-  logStatus('Calibrated! Threshold set to ' + threshold.toFixed(3) + '. Try blowing now.');
+  logStatus('May your all wishes come true! Blow again to celebrate more 🌼');
 }
 
 function extinguish(rms){
   extinguished = true;
   cake.classList.add('out');
   relightBtn.classList.remove('hidden');
-  logStatus('Candles out! Happy Birthday 🎉 (Click Relight to try again)');
+  logStatus('May your all wishes come true! Blow again to celebrate more 🌼');
   burstFlowers(rms);
 }
 
@@ -395,15 +395,9 @@ function relight(){
   extinguished = false;
   cake.classList.remove('out');
   relightBtn.classList.add('hidden');
-  logStatus('Relit! You can blow again.');
+  logStatus('May your all wishes come true! Blow again to celebrate more 🌼');
 }
 
-/* ---- 🌼 Realistic Daisy "confetti" ----
-   Structure: flower -> sprite -> bloom -> (petals + core)
-   - fall: vertical drop
-   - sway: horizontal drift + slight rock
-   - spin: slow continuous rotation
-   - bloomIn: quick scale-in pop */
 function createFlower(size){
   const f = document.createElement('div');
   f.className = 'flower';
